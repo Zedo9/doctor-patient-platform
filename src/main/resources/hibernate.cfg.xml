@@ -35,6 +35,8 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
         <mapping class="entity.Student" />
+        <mapping class="entity.Patient" />
+        <mapping class="entity.Doctor" />
 
     </session-factory>
 
