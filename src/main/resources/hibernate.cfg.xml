@@ -34,9 +34,10 @@
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
 
-        <mapping class="entity.Student" />
-        <mapping class="entity.Patient" />
-        <mapping class="entity.Doctor" />
+        <mapping class="domain.Student" />
+        <mapping class="domain.Patient" />
+        <mapping class="domain.Doctor" />
+        <mapping class="domain.Consultation" />
 
     </session-factory>
 
