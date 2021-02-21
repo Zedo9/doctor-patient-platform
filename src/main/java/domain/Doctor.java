@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Doctor {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="doctor_id")
     private int id;
 
     @Column(name="first_name")
@@ -25,8 +25,8 @@ public class Doctor {
     @Column(name="speciality")
     private String speciality;
 
-    public Doctor(int id, String firstName, String lastName, String email, String password, String speciality) {
-        this.id = id;
+    public Doctor( String firstName, String lastName, String email, String password, String speciality) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

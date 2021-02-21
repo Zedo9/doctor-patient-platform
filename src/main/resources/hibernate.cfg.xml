@@ -7,7 +7,10 @@
     <session-factory>
 
         <!-- JDBC Database connection settings -->
-        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!--<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+        <property name="connection.username">mouwahed</property>
+        <property name="connection.password">AQWZSXEDCrfv101#</property>-->
         <property name="connection.url">jdbc:mysql://mysql-chedlyz.alwaysdata.net/chedlyz_hibernate?useSSL=false</property>
         <property name="connection.username">chedlyz</property>
         <property name="connection.password">tFb8rEAUcdy89ek</property>

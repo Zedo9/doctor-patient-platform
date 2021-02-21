@@ -1,24 +1,29 @@
 package domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
+
 @Entity
 @Table(name="consultation")
 public class Consultation {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="consultation_id")
     private int id;
 
-    @Column(name="patient_id")
+
+    @OneToMany
+    private List<Patient> patients;
+    @JoinColumn(name="patient_id",referencedColumnName = "patients.patien_id")
+
     private int patient_id;
 
-    @Column(name="doctor_id")
+
+    @OneToMany
+    private List<Doctor> doctors;
+    @JoinColumn(name="doctor_id",referencedColumnName = "doctors.doctor_id")
+
     private int doctor_id;
 
     @Column(name="date")
