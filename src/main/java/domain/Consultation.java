@@ -15,7 +15,7 @@ public class Consultation {
 
     @OneToMany
     private List<Patient> patients;
-    @JoinColumn(name="patient_id",referencedColumnName = "patients.patien_id")
+    @JoinColumn(name="patient_id",referencedColumnName = "patients.patient_id")
 
     private int patient_id;
 
