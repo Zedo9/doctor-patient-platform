@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 public class PatientRepoImpl implements PatientRepo{
     private EntityManager em;
 
-
     @Override
     public Patient getPatientById(int id) {
         return em.find(Patient.class,id);

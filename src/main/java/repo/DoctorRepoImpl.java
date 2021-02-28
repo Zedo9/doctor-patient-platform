@@ -1,34 +1,40 @@
 package repo;
 
 import domain.Doctor;
-
-import javax.persistence.EntityManager;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import util.HibernateUtil;
 
 public class DoctorRepoImpl implements DoctorRepo{
-    private EntityManager entityManager;
+    private Session session;
+    public DoctorRepoImpl(){
+        session = HibernateUtil.getSessionFactory().openSession();
+    }
     @Override
     public Doctor getDoctorById(int id) {
-        return entityManager.find(Doctor.class,id);
+        return session.find(Doctor.class,id);
     }
 
     @Override
     public Doctor getDoctorByFullName(String fullName) {
-        return entityManager.find(Doctor.class,fullName);
+        return session.find(Doctor.class,fullName);
     }
 
     @Override
     public Doctor saveDoctor(Doctor d) {
-        entityManager.persist(d);
+        Transaction transaction = session.beginTransaction();
+        session.save(d);
+        transaction.commit();
         return d;
     }
 
     @Override
     public void deleteDoctor(Doctor d) {
-        if(entityManager.contains(d)){
-            entityManager.remove(d);
+        if(session.contains(d)){
+            session.remove(d);
         }
         else{
-            entityManager.merge(d);
+            session.merge(d);
         }
     }
 }
