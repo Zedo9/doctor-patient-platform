@@ -6,37 +6,37 @@ import javax.persistence.*;
 @Entity
 @Table(name="patient")
 public class Patient {
+    public Patient(){}
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="patient_id")
     private int id;
 
-
     @Column(name="first_name")
-    private String firstNname;
+    private String firstName;
 
     @Column(name="last_name")
     private String lastName;
 
     @Column(name="email")
-    private String Email;
+    private String email;
 
     @Column(name = "password")
-    private String Password;
+    private String password;
 
     @Column(name="age")
-    private String Age;
+    private String age;
 
     @Column (name="gender")
-    private String Gender;
+    private String gender;
 
     public Patient(String firstName, String lastName, String email, String password, String age, String gender) {
-        this.firstNname = firstName;
+        this.firstName = firstName;
         this.lastName = lastName;
-        Email = email;
-        Password = password;
-        Age = age;
-        Gender = gender;
+        this.email = email;
+        this.password = password;
+        this.age = age;
+        this.gender = gender;
     }
 
     public int getId() {
@@ -47,12 +47,12 @@ public class Patient {
         this.id = id;
     }
 
-    public String getFirstNname() {
-        return firstNname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstNname(String firstNname) {
-        this.firstNname = firstNname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -64,34 +64,34 @@ public class Patient {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(String age) {
-        Age = age;
+        this.age = age;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
     }
 }

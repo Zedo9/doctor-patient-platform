@@ -1,10 +1,14 @@
 package domain;
 
 import javax.persistence.*;
+import javax.print.Doc;
 
 @Entity
 @Table(name="doctor")
 public class Doctor {
+
+    public Doctor(){}
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="doctor_id")
