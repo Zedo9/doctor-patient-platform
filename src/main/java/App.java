@@ -1,10 +1,11 @@
-import domain.Doctor;
-import repo.DoctorRepoImpl;
+import domain.User;
+
+import repo.UserRepoImpl;
 
 public class App {
     public static void main(String[] args) {
-        Doctor d1 = new Doctor("D1fname","D1lname","D1email","D1pass","D1spec");
-        DoctorRepoImpl repo = new DoctorRepoImpl();
-        repo.saveDoctor(d1);
+        User user = new User(2,"mymail","pass","DOCTOR",true,2);
+        UserRepoImpl repo = new UserRepoImpl();
+        repo.saveUser(user);
     }
 }

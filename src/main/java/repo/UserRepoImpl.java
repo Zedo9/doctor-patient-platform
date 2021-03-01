@@ -1,31 +1,28 @@
 package repo;
 
-import domain.Doctor;
+import domain.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import util.HibernateUtil;
 
-public class DoctorRepoImpl implements DoctorRepo{
+public class UserRepoImpl implements UserRepo{
     private Session session;
-    public DoctorRepoImpl(){
+    public UserRepoImpl(){
         session = HibernateUtil.getSessionFactory().getCurrentSession();
     }
     @Override
-    public Doctor getDoctorById(int id) {
-        return session.find(Doctor.class,id);
+    public User getUserById(int id) {
+        return session.find(User.class,id);
     }
-
-
     @Override
-    public Doctor saveDoctor(Doctor d) {
+    public User saveUser(User d) {
         Transaction transaction = session.beginTransaction();
         session.save(d);
         transaction.commit();
         return d;
     }
-
     @Override
-    public void deleteDoctor(Doctor d) {
+    public void deleteUser(User d) {
         if(session.contains(d)){
             session.remove(d);
         }

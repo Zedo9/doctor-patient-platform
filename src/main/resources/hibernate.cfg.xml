@@ -24,6 +24,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <mapping class="domain.Patient" />
         <mapping class="domain.Doctor" />
-        <mapping class="domain.Consultation" />
+        <mapping class="domain.Appointment" />
+        <mapping class="domain.User" />
     </session-factory>
 </hibernate-configuration>

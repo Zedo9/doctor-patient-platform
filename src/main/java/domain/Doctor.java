@@ -2,17 +2,23 @@ package domain;
 
 import javax.persistence.*;
 import javax.print.Doc;
+import java.util.Set;
 
 @Entity
 @Table(name="doctor")
 public class Doctor {
-
     public Doctor(){}
-
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="doctor_id")
-    private int id;
+    private int doctorId;
+
+    @OneToOne
+    @JoinColumn(foreignKey = @ForeignKey(name="user_id_FK"), name = "user_id")
+    private User user;
+
+    @OneToMany(mappedBy = "doctor")
+    private Set<Appointment> appointments;
 
     @Column(name="first_name")
     private String firstName;
@@ -20,81 +26,16 @@ public class Doctor {
     @Column(name="last_name")
     private String lastName;
 
-    @Column(name="email")
-    private String email;
+    @Column (name="phone")
+    private String phone;
 
-    @Column(name="password")
-    private String password;
+    @Column (name="address")
+    private String address;
+
+    @Column (name="city")
+    private String city;
 
     @Column(name="speciality")
     private String speciality;
 
-    public Doctor( String firstName, String lastName, String email, String password, String speciality) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.speciality = speciality;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSpeciality() {
-        return speciality;
-    }
-
-    public void setSpeciality(String speciality) {
-        this.speciality = speciality;
-    }
-
-    @Override
-    public String toString() {
-        return "Doctor{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", speciality='" + speciality + '\'' +
-                '}';
-    }
 }
