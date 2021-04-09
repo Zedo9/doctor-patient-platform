@@ -1,4 +1,4 @@
-package domain;
+package mygroup.appointments.domain;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -6,12 +6,10 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="appointment")
 public class Appointment {
-    public Appointment(){}
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="appointment_id")
-    private int appointmentId;
+    private Long appointmentId;
 
     @ManyToOne
     @JoinColumn(foreignKey=@ForeignKey(name="patient_id_FK"),name="patient_id", nullable = false)
@@ -26,13 +24,13 @@ public class Appointment {
 
     // "PENDING" - "CONFIRMED" - "REJECTED"
     @Column(name="status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private AppointmentStatus status;
 
     @Column(name="date_time")
     private Timestamp dateTime;
 
-    public Appointment(int appointmentId, Patient patient, Doctor doctor, String notes, String status, Timestamp dateTime) {
-        this.appointmentId = appointmentId;
+    public Appointment(Patient patient, Doctor doctor, String notes, AppointmentStatus status, Timestamp dateTime) {
         this.patient = patient;
         this.doctor = doctor;
         this.notes = notes;
@@ -40,11 +38,11 @@ public class Appointment {
         this.dateTime = dateTime;
     }
 
-    public int getAppointmentId() {
+    public Long getAppointmentId() {
         return appointmentId;
     }
 
-    public void setAppointmentId(int appointmentId) {
+    public void setAppointmentId(Long appointmentId) {
         this.appointmentId = appointmentId;
     }
 
@@ -72,11 +70,11 @@ public class Appointment {
         this.notes = notes;
     }
 
-    public String getStatus() {
+    public AppointmentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(AppointmentStatus status) {
         this.status = status;
     }
 

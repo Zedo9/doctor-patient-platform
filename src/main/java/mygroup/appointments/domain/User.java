@@ -1,4 +1,4 @@
-package domain;
+package mygroup.appointments.domain;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="user_id")
-    private int userId;
+    private Long userId;
 
     @Column(name="email")
     private String email;
@@ -19,16 +19,16 @@ public class User {
 
     // DOCTOR - PATIENT
     @Column (name="type")
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
 
     @Column (name="account_confirmed")
-    private boolean confirmed;
+    private Boolean confirmed;
 
     @Column (name="referral_id", nullable = true)
-    private int referralId;
+    private Long referralId;
 
-    public User(int userId, String email, String password, String type, boolean confirmed, int referralId) {
-        this.userId = userId;
+    public User(String email, String password, UserType type, Boolean confirmed, Long referralId) {
         this.email = email;
         this.password = password;
         this.type = type;
@@ -36,11 +36,11 @@ public class User {
         this.referralId = referralId;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -60,27 +60,27 @@ public class User {
         this.password = password;
     }
 
-    public String getType() {
+    public UserType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(UserType type) {
         this.type = type;
     }
 
-    public boolean isConfirmed() {
+    public Boolean getConfirmed() {
         return confirmed;
     }
 
-    public void setConfirmed(boolean confirmed) {
+    public void setConfirmed(Boolean confirmed) {
         this.confirmed = confirmed;
     }
 
-    public int getReferralId() {
+    public Long getReferralId() {
         return referralId;
     }
 
-    public void setReferralId(int referralId) {
+    public void setReferralId(Long referralId) {
         this.referralId = referralId;
     }
 }
