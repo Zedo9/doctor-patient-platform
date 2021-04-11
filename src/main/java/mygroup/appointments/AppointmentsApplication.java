@@ -21,6 +21,5 @@ public class AppointmentsApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		User user = new User("email","stronpassword", UserType.DOCTOR,false,null);
 		userRepository.save(user);
-		System.out.println(userRepository.findById(Long.valueOf(1)).toString());
 	}
 }
