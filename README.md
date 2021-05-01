@@ -30,3 +30,7 @@ A **Patient**, in addition to his normal user abilities, can :
 
 [ER Diagram Link](https://drive.google.com/file/d/1DUD2y6Z2Ej43MxXln2_BN-1rasQEu8Ne/view?ts=602ae58a)
 ![ERD](docs/ER.png)
+
+## Front-end flow
+
+![frontend](docs/frontend.png)
