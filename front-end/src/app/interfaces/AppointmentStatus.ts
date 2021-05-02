@@ -1,8 +1,6 @@
-
-
-export enum AppointmentStatus{
-      PENDING,
-      CONFIRMED,
-      FINISHED,
-      REJECTED
+export enum AppointmentStatus {
+  PENDING,
+  CONFIRMED,
+  FINISHED,
+  REJECTED,
 }
