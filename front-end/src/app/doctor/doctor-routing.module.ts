@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
-import { DoctorLayoutComponent } from './layout/doctor-layout.component';
+import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
+import { PatientsPageComponent } from './patients-page/patients-page.component';
 
 const routes: Routes = [
   {
@@ -9,8 +11,21 @@ const routes: Routes = [
     component: DoctorLayoutComponent,
     children: [
       {
-        path: '',
+        path: 'dashboard',
         component: DoctorDashboardComponent,
+      },
+      {
+        path: 'calendar',
+        component: CalendarPageComponent,
+      },
+      {
+        path: 'patients',
+        component: PatientsPageComponent,
+      },
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
       },
     ],
   },

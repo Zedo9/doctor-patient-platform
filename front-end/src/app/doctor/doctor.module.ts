@@ -6,6 +6,8 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
 import { AppointmentCardComponent } from './appointment-card/appointment-card.component';
 import { PatientPageComponent } from './patient-page/patient-page.component';
 import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
+import { PatientsPageComponent } from './patients-page/patients-page.component';
+import { CalendarPageComponent } from './calendar-page/calendar-page.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { DoctorLayoutComponent } from './doctor-layout/doctor-layout.component';
     DoctorDashboardComponent,
     AppointmentCardComponent,
     PatientPageComponent,
+    PatientsPageComponent,
+    CalendarPageComponent,
   ],
   imports: [CommonModule, DoctorRoutingModule],
 })

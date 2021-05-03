@@ -1,4 +1,37 @@
+.container {
+  height: 100vh;
+}
 .content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  height: 100%;
+}
+
+.header {
+  text-align: center;
+  background-color: green;
+  color: white;
+}
+
+.sidebar {
+  display: flex;
+  height: 100%;
+  flex: 3;
+  background-color: red;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active-tab {
+  height: 100%;
+  width: 100%;
+  flex: 12;
+}
+
+nav,
+.nav-element {
+  width: 100%;
+}
+.nav-element {
+  text-align: center;
 }
