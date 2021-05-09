@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppointmentsApplication implements CommandLineRunner {
+public class AppointmentsApplication  {
 
 	@Autowired
 	private UserRepository userRepository;
@@ -17,9 +17,5 @@ public class AppointmentsApplication implements CommandLineRunner {
 		SpringApplication.run(AppointmentsApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		User user = new User("email","stronpassword", UserType.DOCTOR,false,null);
-		userRepository.save(user);
-	}
+
 }
