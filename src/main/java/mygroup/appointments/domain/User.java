@@ -28,6 +28,11 @@ public class User {
     @Column (name="referral_id", nullable = true)
     private Long referralId;
 
+    public User(String email, String password)
+    {
+        this.email = email;
+        this.password = password;
+    }
     public User(String email, String password, UserType type, Boolean confirmed, Long referralId) {
         this.email = email;
         this.password = password;
