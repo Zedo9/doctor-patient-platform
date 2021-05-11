@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class User {
     public User(){}
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="user_id")
     private Long userId;
 
@@ -17,7 +17,6 @@ public class User {
     @Column(name="password")
     private String password;
 
-    // DOCTOR - PATIENT
     @Column (name="type")
     @Enumerated(EnumType.STRING)
     private UserType type;
@@ -25,6 +24,7 @@ public class User {
     @Column (name="account_confirmed")
     private Boolean confirmed;
 
+    // TODO Find a better way to manage referrals
     @Column (name="referral_id", nullable = true)
     private Long referralId;
 

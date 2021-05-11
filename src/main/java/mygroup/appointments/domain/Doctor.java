@@ -1,28 +1,35 @@
 package mygroup.appointments.domain;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name="doctor")
 public class Doctor {
+    public Doctor(){
+
+    }
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="doctor_id")
     private Long doctorId;
 
     @OneToOne
-    @JoinColumn(foreignKey = @ForeignKey(name="user_id_FK"), name = "user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "doctor")
-    private List<Appointment> appointments;
+    @OneToMany(mappedBy = "doctor",
+            fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Appointment> appointments;
 
     @Column(name="first_name", length = 20)
-    private String firstName;
+    private String firstname;
 
     @Column(name="last_name", length = 20)
-    private String lastName;
+    private String lastname;
 
     @Column (name="phone")
     private String phone;
@@ -38,11 +45,21 @@ public class Doctor {
     @Enumerated(EnumType.STRING)
     private DoctorSpeciality speciality;
 
-    public Doctor(User user, List<Appointment> appointments, String firstName, String lastName, String phone, String address, City city, DoctorSpeciality speciality) {
+    public Doctor(
+            Long doctorId,
+            User user,
+            Set<Appointment> appointments,
+            String firstname,
+            String lastname,
+            String phone,
+            String address,
+            City city,
+            DoctorSpeciality speciality) {
+        this.doctorId = doctorId;
         this.user = user;
         this.appointments = appointments;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.phone = phone;
         this.address = address;
         this.city = city;
@@ -65,28 +82,28 @@ public class Doctor {
         this.user = user;
     }
 
-    public List<Appointment> getAppointments() {
+    public Set<Appointment> getAppointments() {
         return appointments;
     }
 
-    public void setAppointments(List<Appointment> appointments) {
+    public void setAppointments(Set<Appointment> appointments) {
         this.appointments = appointments;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPhone() {
@@ -119,5 +136,18 @@ public class Doctor {
 
     public void setSpeciality(DoctorSpeciality speciality) {
         this.speciality = speciality;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Doctor doctor = (Doctor) o;
+        return Objects.equals(doctorId, doctor.doctorId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(doctorId);
     }
 }

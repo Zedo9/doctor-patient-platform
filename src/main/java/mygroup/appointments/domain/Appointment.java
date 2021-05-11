@@ -1,41 +1,50 @@
 package mygroup.appointments.domain;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name="appointment")
 public class Appointment {
+    public Appointment(){
+    }
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="appointment_id")
     private Long appointmentId;
 
     @ManyToOne
-    @JoinColumn(foreignKey=@ForeignKey(name="patient_id_FK"),name="patient_id", nullable = false)
+    @JoinColumn(name="patient_id", nullable = false)
     private Patient patient;
 
     @ManyToOne
-    @JoinColumn(foreignKey=@ForeignKey(name="doctor_id_FK"),name="doctor_id" ,nullable = false)
+    @JoinColumn(name="doctor_id" ,nullable = false)
     private Doctor doctor;
 
     @Column(name="notes")
     private String notes;
 
-    // "PENDING" - "CONFIRMED" - "REJECTED"
     @Column(name="status")
     @Enumerated(EnumType.STRING)
     private AppointmentStatus status;
 
-    @Column(name="date_time")
-    private Timestamp dateTime;
+    @Temporal(TemporalType.DATE)
+    @Column(name="date")
+    private Date date;
 
-    public Appointment(Patient patient, Doctor doctor, String notes, AppointmentStatus status, Timestamp dateTime) {
+    @Temporal(TemporalType.TIME)
+    @Column(name="time")
+    private Date time;
+
+    public Appointment(Long appointmentId, Patient patient, Doctor doctor, String notes, AppointmentStatus status, Date date, Date time) {
+        this.appointmentId = appointmentId;
         this.patient = patient;
         this.doctor = doctor;
         this.notes = notes;
         this.status = status;
-        this.dateTime = dateTime;
+        this.date = date;
+        this.time = time;
     }
 
     public Long getAppointmentId() {
@@ -78,11 +87,32 @@ public class Appointment {
         this.status = status;
     }
 
-    public Timestamp getDateTime() {
-        return dateTime;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateTime(Timestamp dateTime) {
-        this.dateTime = dateTime;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appointment that = (Appointment) o;
+        return Objects.equals(appointmentId, that.appointmentId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(appointmentId);
     }
 }
