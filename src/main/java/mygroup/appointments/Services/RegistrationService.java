@@ -1,4 +1,4 @@
-package mygroup.appointments.Service;
+package mygroup.appointments.Services;
 
 import mygroup.appointments.domain.User;
 import mygroup.appointments.repositories.RegistrationRepository;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegistrationService {
-      @Autowired
-      private RegistrationRepository repo;
+    @Autowired
+    private RegistrationRepository repo;
 
     public User saveUser(User user)
     {
