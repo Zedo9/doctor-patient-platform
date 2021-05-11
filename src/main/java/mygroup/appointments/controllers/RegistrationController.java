@@ -1,6 +1,6 @@
-package mygroup.appointments.Controlles;
+package mygroup.appointments.Controllers;
 
-import mygroup.appointments.Service.RegistrationService;
+import mygroup.appointments.Services.RegistrationService;
 import mygroup.appointments.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
