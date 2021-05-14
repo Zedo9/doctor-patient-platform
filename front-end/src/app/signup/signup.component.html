@@ -1,39 +1,46 @@
-<div class="container center">
-    <h2> User Registration</h2>
+<div class="container center" style="padding-left: 120px;padding-top: 30px;">
+  <h2 style="color: #1A237E;">Registration Form</h2>
+  <br>
+  <div class="col-lg-10">
+    <div class="card2 card border-0 px-4 py-5 h">
   
       <form #Registerform="ngForm" (ngSubmit)="registerUser()" >
-        <small >{{msg}}</small>
+     
         
         <div class="form-group">
           
-          <label for="email">Email:</label>
+          <label for="email" class="mb-2" style="font-size: large;">Email:</label>
           <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)]="user.email" required #email="ngModel">
         </div>
         <div class="form-group">
-          <label for="pwd">Password:</label>
+          <label for="pwd"  style="font-size: large;">Password:</label> 
           <input type="password" class="form-control"  placeholder="Enter password" name="password" [(ngModel)]="user.password" required #password="ngModel">
         </div>
 
 
         <div class="form-group">
-            <label for="type">status</label>
+            <label for="type"  style="font-size: large;">Status</label>
             <input type="text" class="form-control"  placeholder="Enter your status" name="type" [(ngModel)]="user.type" required >
           </div>
 
           <div class="form-group">
-            <label for="confirmed">confirmed:</label>
-            <input type="number" class="form-control"  name="confirmed" [(ngModel)]="user.confirmed" required >
+            <label for="confirmed"  style="font-size: large;"> Confirmed:</label>
+            <input type="number" class="form-control"  placeholder="Enter the code" name="confirmed" [(ngModel)]="user.confirmed" required >
           </div>
           <div class="form-group">
-            <label for="referralId">referralId:</label>
-            <input type="number" class="form-control"  name="confirmed" [(ngModel)]="user.referralId" required >
+            <label for="referralId"  style="font-size: large;">ReferralId:</label>
+            <input type="number" class="form-control"  name="confirmedid"  placeholder="Enter your referral Id"[(ngModel)]="user.referralId" required >
           </div>
 
         <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
+          <label><input type="checkbox" name="remember"  style="font-size: large;"> Remember me</label>
         </div>
-        <button  type="submit" class="btn btn-info">Sign up</button>
+        <div style="padding-left: 650px;">  <button  type="submit" class="bg-blue btn btn-blue"  style="font-size: large;"> Sign up </button></div>
+        <h6 >{{msg}}</h6>
       </form>
+      </div>
+      </div>
      
     </div>
+
 
