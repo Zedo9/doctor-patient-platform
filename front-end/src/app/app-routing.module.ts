@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'patient-dashboard',
     loadChildren: () =>
-      import(`./patient/patient.module`).then((m)=>m.PatientModule),
+      import(`./patient/patient.module`).then((e)=>e.PatientModule),
   }
 
 ];
