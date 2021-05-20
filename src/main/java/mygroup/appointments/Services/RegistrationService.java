@@ -5,6 +5,8 @@ import mygroup.appointments.repositories.RegistrationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class RegistrationService {
     @Autowired
@@ -12,7 +14,7 @@ public class RegistrationService {
 
     public User saveUser(User user)
     {
-       return repo.save(user);
+        return repo.save(user);
     }
     public User fetchUserByEmail(String email)
     {

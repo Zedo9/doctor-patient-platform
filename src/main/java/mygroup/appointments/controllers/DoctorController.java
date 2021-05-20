@@ -9,6 +9,21 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+/*TODO
+GET /api/doctor/{doctorId}/appointments
+POST /api/doctor/{doctorID}/appointments
+GET /api/doctor/{doctorID}/appointments/{appointmentID}
+PUT /api/doctor/{doctorID}/appointments/{appointmentID} // Status - Date - Time - Notes
+
+PUT /api/doctors/{doctorId}
+
+Patients Controller
+GET /api/patients/{patientId}/appointments
+POST /api/patients/{patientId}/appointments
+GET /api/patients/{patientId}/appointments/{appointmentID}
+
+PUT /api/patients/{patientId}
+ */
 @RestController
 @RequestMapping("/api/doctors")
 public class DoctorController {
@@ -44,3 +59,4 @@ public class DoctorController {
         return null; // TODO Will be replaced with error code in response
     }
 }
+

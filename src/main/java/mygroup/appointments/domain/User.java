@@ -21,7 +21,7 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserType type;
 
-    @Column (name="account_confirmed")
+    @Column (name="account_confirmed", columnDefinition = "boolean default false")
     private Boolean confirmed;
 
     // TODO Find a better way to manage referrals

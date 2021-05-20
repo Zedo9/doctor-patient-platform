@@ -1,5 +1,34 @@
 # Doctor and Patients Appointment Managment System
 
+## TODO
+
+- Doctor Controller : Chedly
+
+  - [ ] GET /api/doctor/{doctorId}/appointments
+  - [ ] POST /api/doctor/{doctorID}/appointments
+  - [ ] GET /api/doctor/{doctorID}/appointments/{appointmentID}
+  - [ ] PUT /api/doctor/{doctorID}/appointments/{appointmentID} // Status - Date - Time - Notes
+  - [ ] PUT /api/doctors/{doctorId}
+  - [ ] Exceptions + Handler
+
+- Patients Controller : Mouwahed
+
+  - [ ] GET /api/patients/{patientId}/appointments
+  - [ ] POST /api/patients/{patientId}/appointments
+  - [ ] GET /api/patients/{patientId}/appointments/{appointmentID}
+  - [ ] PUT /api/patients/{patientId}
+  - [ ] Exceptions + Handler
+
+- User Auth ESLEM (https://javatodev.com/spring-boot-jwt-authentication/) :
+
+  - [ ] Add Spring Security
+  - [ ] ReferralID (https://www.baeldung.com/spring-request-param)
+  - [ ] User Confirmation
+  - [ ] JWT -
+
+- Aspects :
+  - [] Logging Aspect
+
 ## User stories and features
 
 - A user can create and manage his account, he can refer other users to sign up in order to obtain special offers/gifts.
