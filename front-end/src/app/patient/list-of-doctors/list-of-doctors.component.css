@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  background-color: aqua;
+  border-radius: 15px;
+  padding: 10px;
+
+  width: 40%;
+}
+.list h4:first-of-type {
+  float: left;
+  padding-right: 10px;
+}
+.list button {
+  float: left;
+}
