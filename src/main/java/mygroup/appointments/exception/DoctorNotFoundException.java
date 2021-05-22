@@ -1,11 +1,11 @@
 package mygroup.appointments.exception;
 
-public class EntityNotFoundException extends RuntimeException{
+public class DoctorNotFoundException extends RuntimeException{
     private String message;
-    public EntityNotFoundException(String message){
+    public DoctorNotFoundException(String message){
         super(message);
         this.message = message;
     }
 
-    public EntityNotFoundException(){}
+    public DoctorNotFoundException(){}
 }
