@@ -11,7 +11,7 @@
   
   - [ ] POST /api/v1/appointments
   - [ ] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
-  - [ ] GET /api/v1/doctors/{doctorID}/appointments/{appointmentID}
+  - [ ] GET /api/v1/appointments/{appointmentID}
   
 - Patients Controller : Mouwahed
 
