@@ -9,8 +9,8 @@
 
 - Appointments Controller : Mouwahed
 
-  - [ ] POST /api/v1/appointments
-  - [ ] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
+  - [x] POST /api/v1/appointments
+  - [x] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
   - [ ] GET /api/v1/appointments/{appointmentID}
 
 - Patients Controller : Mouwahed

@@ -3,11 +3,13 @@ package mygroup.appointments.services;
 import mygroup.appointments.domain.Appointment;
 import mygroup.appointments.domain.Doctor;
 import mygroup.appointments.domain.Patient;
+import mygroup.appointments.exceptions.AppointmentNotFoundException;
 import mygroup.appointments.exceptions.DoctorNotFoundException;
 import mygroup.appointments.exceptions.PatientNotFoundExcep;
 import mygroup.appointments.repositories.AppointmentRepository;
 import mygroup.appointments.repositories.DoctorRepository;
 import mygroup.appointments.repositories.PatientRepository;
+import mygroup.appointments.requests.UpdateAppointmentRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -37,8 +39,17 @@ public class AppointmentService {
         return appointmentRepository.getByDoctor(doctor.get(), pageable);
     }
 
-    public Appointment createAppointment(){
-        return null;
+    public Appointment createAppointment(Appointment appointment){
+        return appointmentRepository.save(appointment);
+    }
+    public Appointment updateAppointment(Long appointmentId, Long doctorId, UpdateAppointmentRequest appointmentRequestChanges) throws AppointmentNotFoundException{
+        Appointment appointment= (Appointment) getAppointmentsForDoctor(doctorId,Pageable.unpaged());
+        if(appointmentRequestChanges.getNotes()!=null) appointment.setNotes(appointment.getNotes());
+        if(appointmentRequestChanges.getStatus()!=null) appointment.setStatus(appointment.getStatus());
+        if(appointmentRequestChanges.getDate()!=null) appointment.setDate((appointment.getDate()));
+        if(appointmentRequestChanges.getTime()!=null) appointment.setTime(appointment.getTime());
+        appointmentRepository.save(appointment);
+        return appointment;
     }
 
     public Page<Appointment> getPatientAppointments(

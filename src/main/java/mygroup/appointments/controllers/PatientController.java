@@ -54,7 +54,7 @@ public class PatientController {
          return new ResponseEntity<>(patientService.getPatientById(patientId),HttpStatus.OK);
     }
 
-    @PatchMapping("{patientId}")
+    @PatchMapping("/{patientId}")
     public ResponseEntity<Patient> updatePatient(@PathVariable Long patientId, @RequestBody UpdatePatientRequest body) throws PatientNotFoundExcep{
          Patient patient=patientService.updatePatient(patientId,body);
          return new ResponseEntity<>(patient,HttpStatus.OK);
