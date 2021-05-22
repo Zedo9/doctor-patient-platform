@@ -6,18 +6,18 @@
 
   - [x] GET /api/v1/doctors/{doctorId}/appointments (Sortable - Pageable)
   - [x] PATCH /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
-  
+
 - Appointments Controller : Mouwahed
-  
+
   - [ ] POST /api/v1/appointments
   - [ ] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
   - [ ] GET /api/v1/appointments/{appointmentID}
-  
+
 - Patients Controller : Mouwahed
 
-  - [ ] GET /api/v1/patients/{patientId}/appointments (Sortable - Pageable)
-  - [ ] GET /api/v1/patients/{patientId}/appointments/{appointmentID}
-  - [ ] PATCH /api/v1/patients/{patientId} (Should only be accessed by the patient himself)
+  - [x] GET /api/v1/patients/{patientId}/appointments (Sortable - Pageable)
+  - [x] GET /api/v1/patients/{patientId}/appointments/{appointmentID}
+  - [x] PATCH /api/v1/patients/{patientId} (Should only be accessed by the patient himself)
 
 - User Auth ESLEM (https://javatodev.com/spring-boot-jwt-authentication/) :
 
@@ -29,7 +29,6 @@
 - Aspects : Chedly
   - [ ] Logging Aspect
   - [ ] Global Exception Handler
-  
 - Exceptions :
   - [ ] Exceptions
 
