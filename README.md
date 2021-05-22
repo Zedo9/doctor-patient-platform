@@ -4,10 +4,10 @@
 
 - Doctor Controller : Chedly
 
-  - [ ] GET /api/doctor/{doctorId}/appointments
-  - [ ] POST /api/doctor/{doctorID}/appointments
-  - [ ] GET /api/doctor/{doctorID}/appointments/{appointmentID}
-  - [ ] PUT /api/doctor/{doctorID}/appointments/{appointmentID} // Status - Date - Time - Notes
+  - [ ] GET /api/doctors/{doctorId}/appointments
+  - [ ] POST /api/doctors/{doctorID}/appointments
+  - [ ] GET /api/doctors/{doctorID}/appointments/{appointmentID}
+  - [ ] PUT /api/doctors/{doctorID}/appointments/{appointmentID} // Status - Date - Time - Notes
   - [ ] PUT /api/doctors/{doctorId}
   - [ ] Exceptions + Handler
 
@@ -27,7 +27,7 @@
   - [ ] JWT -
 
 - Aspects :
-  - [] Logging Aspect
+  - [ ] Logging Aspect
 
 ## User stories and features
 
