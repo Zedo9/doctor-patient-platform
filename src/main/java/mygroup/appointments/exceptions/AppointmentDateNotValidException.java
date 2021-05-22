@@ -1,4 +1,4 @@
-package mygroup.appointments.exception;
+package mygroup.appointments.exceptions;
 
 public class AppointmentDateNotValidException extends RuntimeException {
     private String message;

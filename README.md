@@ -4,14 +4,14 @@
 
 - Doctor Controller : Chedly
 
-  - [ ] GET /api/v1/doctors/{doctorId}/appointments (Sortable - Pageable)
-  - [ ] GET /api/v1/doctors/{doctorID}/appointments/{appointmentID}
-  - [ ] PATCH /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
+  - [x] GET /api/v1/doctors/{doctorId}/appointments (Sortable - Pageable)
+  - [x] PATCH /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
   
 - Appointments Controller : Mouwahed
   
   - [ ] POST /api/v1/appointments
   - [ ] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
+  - [ ] GET /api/v1/doctors/{doctorID}/appointments/{appointmentID}
   
 - Patients Controller : Mouwahed
 

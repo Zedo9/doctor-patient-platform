@@ -1,8 +1,8 @@
-package mygroup.appointments.Services;
+package mygroup.appointments.services;
 
-import mygroup.appointments.UpdateDoctorRequest;
+import mygroup.appointments.requests.UpdateDoctorRequest;
 import mygroup.appointments.domain.Doctor;
-import mygroup.appointments.exception.DoctorNotFoundException;
+import mygroup.appointments.exceptions.DoctorNotFoundException;
 import mygroup.appointments.repositories.AppointmentRepository;
 import mygroup.appointments.repositories.DoctorRepository;
 import mygroup.appointments.specs.DoctorSpec;
@@ -18,12 +18,10 @@ import java.util.Optional;
 public class DoctorService {
 
     private final DoctorRepository doctorRepository;
-    private final AppointmentRepository appointmentRepository;
 
     @Autowired
     public DoctorService(DoctorRepository doctorRepository, AppointmentRepository appointmentRepository){
         this.doctorRepository = doctorRepository;
-        this.appointmentRepository = appointmentRepository;
     }
 
     public Page<Doctor> getAllDoctorsBySpec(DoctorSpec doctorSpec, Pageable pageable){
@@ -38,16 +36,12 @@ public class DoctorService {
         return doctor.get();
     }
 
-    public Doctor updateDoctor(Doctor doctor){
-        return null;
-    }
-
     public Doctor createDoctor(Doctor doctor){
         return doctorRepository.save(doctor);
     }
 
-    public void deleteDoctor(Long doctorId) throws Exception {
-        Doctor doctor = doctorRepository.findById(doctorId).orElseThrow(Exception::new);
+    public void deleteDoctor(Long doctorId) throws DoctorNotFoundException {
+        Doctor doctor = getDoctorById(doctorId);
         doctorRepository.delete(doctor);
     }
 

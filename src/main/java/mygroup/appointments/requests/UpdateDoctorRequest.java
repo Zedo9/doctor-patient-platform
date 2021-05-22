@@ -1,4 +1,4 @@
-package mygroup.appointments;
+package mygroup.appointments.requests;
 
 import mygroup.appointments.domain.City;
 import mygroup.appointments.domain.DoctorSpeciality;
@@ -8,6 +8,8 @@ public class UpdateDoctorRequest {
     private String address;
     private String phone;
     private DoctorSpeciality doctorSpeciality;
+
+    public UpdateDoctorRequest(){}
 
     public UpdateDoctorRequest(City city, String address, String phone, DoctorSpeciality doctorSpeciality) {
         this.city = city;

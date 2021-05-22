@@ -1,4 +1,4 @@
-package mygroup.appointments.exception;
+package mygroup.appointments.exceptions;
 
 public class DoctorNotFoundException extends RuntimeException{
     private String message;

@@ -1,8 +1,8 @@
-package mygroup.appointments.Services;
+package mygroup.appointments.services;
 
 import mygroup.appointments.domain.Appointment;
 import mygroup.appointments.domain.Doctor;
-import mygroup.appointments.exception.DoctorNotFoundException;
+import mygroup.appointments.exceptions.DoctorNotFoundException;
 import mygroup.appointments.repositories.AppointmentRepository;
 import mygroup.appointments.repositories.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
