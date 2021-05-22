@@ -6,18 +6,18 @@
 
   - [ ] GET /api/v1/doctors/{doctorId}/appointments (Sortable - Pageable)
   - [ ] GET /api/v1/doctors/{doctorID}/appointments/{appointmentID}
-  - [ ] PUT /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
+  - [ ] PATCH /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
   
 - Appointments Controller : Mouwahed
   
   - [ ] POST /api/v1/appointments
-  - [ ] PUT /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
+  - [ ] PATCH /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
   
 - Patients Controller : Mouwahed
 
   - [ ] GET /api/v1/patients/{patientId}/appointments (Sortable - Pageable)
   - [ ] GET /api/v1/patients/{patientId}/appointments/{appointmentID}
-  - [ ] PUT /api/v1/patients/{patientId} (Should only be accessed by the patient himself)
+  - [ ] PATCH /api/v1/patients/{patientId} (Should only be accessed by the patient himself)
 
 - User Auth ESLEM (https://javatodev.com/spring-boot-jwt-authentication/) :
 
