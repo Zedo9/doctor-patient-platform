@@ -4,30 +4,34 @@
 
 - Doctor Controller : Chedly
 
-  - [ ] GET /api/doctors/{doctorId}/appointments
-  - [ ] POST /api/doctors/{doctorID}/appointments
-  - [ ] GET /api/doctors/{doctorID}/appointments/{appointmentID}
-  - [ ] PUT /api/doctors/{doctorID}/appointments/{appointmentID} // Status - Date - Time - Notes
-  - [ ] PUT /api/doctors/{doctorId}
-  - [ ] Exceptions + Handler
-
+  - [ ] GET /api/v1/doctors/{doctorId}/appointments (Sortable - Pageable)
+  - [ ] GET /api/v1/doctors/{doctorID}/appointments/{appointmentID}
+  - [ ] PUT /api//v1/doctors/{doctorId} (Should only be accessed by the doctor himself)
+  
+- Appointments Controller : Mouwahed
+  
+  - [ ] POST /api/v1/appointments
+  - [ ] PUT /api/v1/appointments ( Status - Date - Time - Notes / Should on be accessed by a doctor)
+  
 - Patients Controller : Mouwahed
 
-  - [ ] GET /api/patients/{patientId}/appointments
-  - [ ] POST /api/patients/{patientId}/appointments
-  - [ ] GET /api/patients/{patientId}/appointments/{appointmentID}
-  - [ ] PUT /api/patients/{patientId}
-  - [ ] Exceptions + Handler
+  - [ ] GET /api/v1/patients/{patientId}/appointments (Sortable - Pageable)
+  - [ ] GET /api/v1/patients/{patientId}/appointments/{appointmentID}
+  - [ ] PUT /api/v1/patients/{patientId} (Should only be accessed by the patient himself)
 
 - User Auth ESLEM (https://javatodev.com/spring-boot-jwt-authentication/) :
 
   - [ ] Add Spring Security
   - [ ] ReferralID (https://www.baeldung.com/spring-request-param)
   - [ ] User Confirmation
-  - [ ] JWT -
+  - [ ] JWT
 
-- Aspects :
+- Aspects : Chedly
   - [ ] Logging Aspect
+  - [ ] Global Exception Handler
+  
+- Exceptions :
+  - [ ] Exceptions
 
 ## User stories and features
 
