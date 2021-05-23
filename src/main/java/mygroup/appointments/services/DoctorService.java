@@ -31,7 +31,7 @@ public class DoctorService {
     public Doctor getDoctorById(Long doctorId) throws DoctorNotFoundException{
         Optional<Doctor> doctor = doctorRepository.findById(doctorId);
         if (doctor.isEmpty()){
-            throw new DoctorNotFoundException("No Doctor with such ID");
+            throw new DoctorNotFoundException("No Doctor with ID "+doctorId);
         }
         return doctor.get();
     }
