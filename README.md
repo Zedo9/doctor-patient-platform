@@ -28,9 +28,9 @@
 
 - Aspects : Chedly
   - [ ] Logging Aspect
-  - [ ] Global Exception Handler
+  - [x] Global Exception Handler
 - Exceptions :
-  - [ ] Exceptions
+  - [x] Exceptions
 
 ## User stories and features
 

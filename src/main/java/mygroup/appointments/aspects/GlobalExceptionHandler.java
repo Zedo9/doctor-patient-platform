@@ -75,5 +75,13 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         response.setTimestamp(LocalDateTime.now());
         return new ResponseEntity<ErrorResponse>(response, HttpStatus.BAD_REQUEST);
     }
-    
+
+    @ExceptionHandler(UserEmailAlreadyExistsException.class)
+    public ResponseEntity<ErrorResponse> handleUserEmailAlreadyExistsException(UserEmailAlreadyExistsException e) {
+        ErrorResponse response= new ErrorResponse();
+        response.setErrorCode("CONFLICT");
+        response.setErrorMessage(e.getMessage());
+        response.setTimestamp(LocalDateTime.now());
+        return new ResponseEntity<ErrorResponse>(response, HttpStatus.CONFLICT);
+    }
 }
