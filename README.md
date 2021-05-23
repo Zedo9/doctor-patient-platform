@@ -27,7 +27,7 @@
   - [ ] JWT
 
 - Aspects : Chedly
-  - [ ] Logging Aspect
+  - [x] Logging Aspect
   - [x] Global Exception Handler
 - Exceptions :
   - [x] Exceptions
