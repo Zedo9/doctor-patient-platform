@@ -34,6 +34,7 @@
 
 ## Good articles and resources
 
+- [Managing multiple request params with Spring](https://blog.tratif.com/2017/11/23/effective-restful-search-api-in-spring/)
 - [Spring Profiling aspect](https://howtodoinjava.com/spring-boot2/logging/performance-logging-aspectj-aop/)
 - [Full logging aspect](https://makeinjava.com/logging-aspect-restful-web-service-spring-aop-request-response/)
 - [Exception Handling](https://blog.devgenius.io/rest-api-exception-handling-in-spring-boot-d6b3272e7e21)
