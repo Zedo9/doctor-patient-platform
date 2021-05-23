@@ -32,6 +32,18 @@
 - Exceptions :
   - [x] Exceptions
 
+## Good articles and resources
+
+- [Spring Profiling aspect](https://howtodoinjava.com/spring-boot2/logging/performance-logging-aspectj-aop/)
+- [Full logging aspect](https://makeinjava.com/logging-aspect-restful-web-service-spring-aop-request-response/)
+- [Exception Handling](https://blog.devgenius.io/rest-api-exception-handling-in-spring-boot-d6b3272e7e21)
+- [Pagination in Spring REST APIs](https://www.javadevjournal.com/spring/rest-pagination-in-spring/)
+- [Exception Handling solutions](https://springframework.guru/exception-handling-in-spring-boot-rest-api/)
+- [Exception handling best practices](https://howtodoinjava.com/best-practices/java-exception-handling-best-practices/)
+- [Project structure and best practices](https://medium.com/the-resonant-web/spring-boot-2-0-project-structure-and-best-practices-part-2-7137bdcba7d3)
+- [JWT Auth with Spring Security](https://javatodev.com/spring-boot-jwt-authentication/)
+- [Real World Example app](https://github.com/gothinkster/spring-boot-realworld-example-app)
+
 ## User stories and features
 
 - A user can create and manage his account, he can refer other users to sign up in order to obtain special offers/gifts.
